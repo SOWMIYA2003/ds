@@ -116,3 +116,13 @@ node * insert(node *T,int x)
 }
 
 ```
+```
+node * LR(node *T)
+{
+// type your code here
+T->left=rotateleft(T->left);
+T=rotateright(T);
+return(T); // T
+}
+```
+
