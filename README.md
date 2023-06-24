@@ -154,5 +154,73 @@ void insert(int val) {
 }
 ```
 ```
+void create_graph()
+{ int i,max_edges,origin,destin;
+        //type your code here...
+        scanf("%d",&n);
+        max_edges=n*(n-1);
+        for(i=1;i<=max_edges;i++)
+        {
+            scanf("%d",&origin);
+            scanf("%d",&destin);
+        
+        if(origin==-1 && destin ==-1)  // conditions inside for loop only ..
+        {  
+            break;
+        }
+        if(origin>=n||destin>=n||origin<0||destin<0)
+        {
+            printf("Invalid Edge");
+            i--;
+        }
+        else
+        {
+            adj[origin][destin]=1;
+        }
+        }
+      }
+
+```
+```
+int main()
+{ int e1,e2,me,n,i;
+  scanf("%d",&V);
+  int adjMatrix[V][V];
+  init(adjMatrix);
+  n=V;
+  me=n*(n-1)/2;
+  for(i=0;i<=me;i++)
+  {
+      scanf("%d%d",&e1,&e2);
+      addEdge(adjMatrix,e1,e2);
+      if(e1==-1 && e2==-1)
+      {
+          break;
+      }
+  }
+  printAdjMatrix(adjMatrix);
+  
+  
+  //type your code here...
+}
+
+```
+```
+int main(void)
+{   //type your code here....
+int i,n;
+scanf("%d",&N); // first capital N
+scanf("%d",&n);
+
+struct Edge edges[n];
+for(i=0;i<n;i++)
+{
+    scanf("%d",&edges[i].src);
+    scanf("%d",&edges[i].dest);
+}
+struct Graph *graph= createGraph(edges,n);
+printGraph(graph);
+return 0;
+}
 
 ```
