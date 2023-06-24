@@ -125,4 +125,34 @@ T=rotateright(T);
 return(T); // T
 }
 ```
+```
+// Delete operaiton
+void delete (int item, struct BTreeNode *myNode) {
+  // type your code here
+  struct BTreeNode *temp; // see the parameter..
+  if(delValFromNode(item,myNode) && myNode->count==0)
+  {
+      temp=myNode;
+      myNode=myNode->linker[0];
+      free(temp);
+  }
+  root=myNode;
+  return; // just return..
+}
+```
+```
+// Insert the value
+void insert(int val) {
+  //type your code here
+  int flag,i;
+  struct BTreeNode *child; // child pointer ..
+  flag=setValue(val,&i,root,&child);
+  if(flag)
+  {
+      root=createNode(i,child);  // createNode..
+  }
+}
+```
+```
 
+```
